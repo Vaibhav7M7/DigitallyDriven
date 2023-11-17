@@ -1,0 +1,10 @@
+user-agent:*
+allow:index.html
+allow:service.html
+allow:about.html
+allow:feature.html
+allow:testimonial.html
+allow:contact.html
+allow:detail.html
+allow:blog.html
+sitemap:https://digitallydriven.co.in/sitemap.xml
