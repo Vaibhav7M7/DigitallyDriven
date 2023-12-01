@@ -2,6 +2,25 @@
 <html lang="en">
 
 <head>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/FcBi1Xd7PSZ825Gl/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
     <link rel="canonical" href="https://digitallydriven.co.in/contact.html" />
     <meta charset="utf-8">
     <title>DigitallyDriven | Contact us | Contact DigitallyDriven today to get to Grow your business online through the power of Digital Marketing</title>
@@ -195,22 +214,26 @@
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-                    <form>
+                   <form id="myForm">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" name="fname" id="fname" style="height: 55px;">
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
+                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" name="fmail" id="fmail" style="height: 55px;">
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" name="fsubject" id="fsubject" style="height: 55px;">
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message" name="fmessage" id="fmessage" ></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            
+                            </div>
+                        </div>
+                    </form>
+					    <button onclick='SubForm()' class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                             </div>
                         </div>
                     </form>
